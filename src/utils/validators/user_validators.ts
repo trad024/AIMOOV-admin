@@ -26,3 +26,6 @@ export const createUserValidator  = [
 export const updateUserValidator = [
     
 ]
+export const updateSessionValidator = [
+  
+];
