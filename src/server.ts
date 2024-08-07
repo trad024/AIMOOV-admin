@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 app.use('/v1/users', userRoutes);
 app.use('/v1/sessions', sessionRoutes);
- app.use('/v1/programs', programRoutes);
+app.use('/v1/programs', programRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running...');

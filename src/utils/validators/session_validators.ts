@@ -11,10 +11,10 @@ export const createSessionValidator  = [
     body('level')
     .exists()
     .withMessage('level is required')
-    .isString()
-    .withMessage('level must be a string')
-    .isIn(['beginner', 'back to sport', 'intermediate', 'athlete'])
-    .withMessage('level must be one of "beginner", "back to sport", "intermediate", or "athlete"'),
+    .isInt()
+    .withMessage('level must be a number')
+    .isIn([1,2,3])
+    .withMessage('level must be one of "1","2", or "3"'),
 
     body('duration')
         .exists()
@@ -23,7 +23,8 @@ export const createSessionValidator  = [
         .withMessage('duration must be a number'),
 
     body('thumbnail')
-        .optional()
+        .exists()
+        .withMessage('thumbnail is required')
         .isString()
         .withMessage('thumbnail must be a string')
 ]

@@ -27,3 +27,16 @@ export const getSessions = async (req: Request, res: Response) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+
+export const getSession = async (req: Request, res: Response) => {
+    try {
+        const session = await Session.findById(req.params.id);
+        if (!session) {
+            return res.status(404).json({ error: 'Session not found' });
+        }
+        res.status(200).json(session);
+    } catch (error: any) {
+        res.status(500).json({ error: error.message });
+    }
+};
