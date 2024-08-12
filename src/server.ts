@@ -5,7 +5,8 @@ import connectDB from './core/db';
 import userRoutes from './routes/UserRoutes';
 import sessionRoutes from './routes/SessionRoutes';
 import programRoutes from './routes/ProgramRoutes';
-import { getSession } from './controllers/SessionController';
+//import { getSession } from './controllers/SessionController';
+//import { getProgram, getPrograms } from './controllers/ProgramController';
 
 const app = express();
 //dotenv.config(); // Ajoutez cette ligne pour charger les variables d'environnement
@@ -24,7 +25,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/v1/users', userRoutes);
 app.use('/v1/sessions', sessionRoutes);
 app.use('/v1/programs', programRoutes);
-app.use('/v1/session', getSession);
+app.use('/v1/session', sessionRoutes);
+app.use('/v1/program', programRoutes);
+app.use('/v1/programs', programRoutes);
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
