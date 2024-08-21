@@ -28,11 +28,11 @@ const sessionSchema = new mongoose.Schema({
         enum: ["MAN", "WOMAN", "BOTH"],
         default: "BOTH",
     },
-    //exercices: { type: [ExerciseDetailsSchema], required: true },
-    //warmup: { type: [ExerciseDetailsSchema], required: true },
-    //stretching: { type: [ExerciseDetailsSchema], required: true },
+    warmup: { type: [ExerciseDetailsSchema], required: true },
+    exercices: { type: [ExerciseDetailsSchema], required: true }, // exercices == workout
+    stretching: { type: [ExerciseDetailsSchema], required: true },
     muscles: [{ type: String }],
-    //translated_muscles: { type: [[TranslatedValueSchema]], required: true },
+    translated_muscles: { type: [[TranslatedValueSchema]], required: true },
     group: {
         type: String,
         enum: ['default', 'challenge'],

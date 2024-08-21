@@ -11,6 +11,6 @@ const ProgSchema = new mongoose.Schema({
     ],
     frequency: { type: Number, default: 0 },
     is_public: { type: Boolean, default: true }
-});
+}, { timestamps : true });
 
 export default mongoose.model('Program', ProgSchema);
